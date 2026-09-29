@@ -15,3 +15,5 @@ function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&l
 async function enter(u){user=u;$("authView").classList.add("hide");$("app").classList.remove("hide");$("welcome").textContent="Olá, "+(u.user_metadata?.nome||u.email.split("@")[0]);await loadCats();await load()}
 const s=await supabase.auth.getSession();if(s.data.session)enter(s.data.session.user);supabase.auth.onAuthStateChange((e,s)=>{if(s)enter(s.user);else{$("app").classList.add("hide");$("authView").classList.remove("hide")}});
 // Portal Financeiro — build 2026-09-29
+
+// Vercel Git connection verified — deploy trigger
