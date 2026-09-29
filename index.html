@@ -1,1 +1,14 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portal Financeiro</title></head><body><h1>Portal Financeiro</h1></body></html>
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b0f14"><title>Portal Financeiro</title><link rel="stylesheet" href="./style.css"></head>
+<body>
+<div id="authView" class="auth"><div class="card"><div class="brand"><b>R$</b><div><strong>Portal Financeiro</strong><small>Seu dinheiro, organizado.</small></div></div>
+<div class="tabs"><button class="tab active" data-mode="login">Entrar</button><button class="tab" data-mode="signup">Criar conta</button></div>
+<form id="authForm"><label id="nameWrap" class="hide">Nome<input id="name" autocomplete="name" placeholder="Seu nome"></label><label>E-mail<input id="email" type="email" autocomplete="email" required placeholder="voce@email.com"></label><label>Senha<input id="password" type="password" autocomplete="current-password" minlength="6" required placeholder="••••••••"></label><button class="primary" id="authBtn">Entrar</button><p id="authMsg"></p></form></div></div>
+<div id="app" class="hide"><header><div><strong>Portal Financeiro</strong><small id="welcome"></small></div><button id="logout">Sair</button></header><main>
+<div class="month"><button id="prev">‹</button><div><strong id="monthLabel"></strong><small>Visão mensal</small></div><button id="next">›</button></div>
+<div class="cards"><div><small>Receitas</small><b id="income">R$ 0,00</b></div><div><small>Despesas</small><b id="expense">R$ 0,00</b></div><div><small>Investimentos</small><b id="invest">R$ 0,00</b></div><div><small>Saldo</small><b id="balance">R$ 0,00</b></div></div>
+<button id="add" class="primary add">+ Novo lançamento</button>
+<section><div class="sectionHead"><strong>Lançamentos</strong><small id="count"></small></div><div id="list" class="list"><div class="empty">Nenhum lançamento neste mês.</div></div></section>
+</main></div>
+<div id="modal" class="modal hide"><div class="modalBox"><div class="modalHead"><strong>Novo lançamento</strong><button id="close">×</button></div><form id="txForm"><label>Tipo<select id="type"><option value="receita">Receita</option><option value="despesa">Despesa</option><option value="investimento">Investimento</option></select></label><label>Data<input id="date" type="date" required></label><label>Valor<input id="value" type="number" min="0" step="0.01" inputmode="decimal" required></label><label>Descrição<input id="desc" required placeholder="Ex.: Salário, mercado..."></label><label>Categoria<select id="cat"></select></label><label class="check"><input id="rec" type="checkbox"> Repetir mensalmente</label><button class="primary">Salvar lançamento</button><p id="txMsg"></p></form></div></div>
+<script type="module" src="./app.js"></script></body></html>
